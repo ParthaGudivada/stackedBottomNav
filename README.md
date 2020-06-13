@@ -1,10 +1,10 @@
-# stackedBottomNav
+# Bottom Navigation Bar Using Stacked Architecture
 
-A new Flutter project.
+  Shows how to implement Bottom Navigation Bar leveraging MVVM style as mentioned in [Stacked](https://github.com/FilledStacks/stacked/tree/master/packages/stacked)
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+ 
 
 A few resources to get you started if this is your first Flutter project:
 
