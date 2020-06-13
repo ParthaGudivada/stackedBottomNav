@@ -4,7 +4,7 @@
 
 ## Getting Started
 
- 
+<video src="simpleNavStacked.mov" width="320" height="200" controls preload></video>
 
 A few resources to get you started if this is your first Flutter project:
 
