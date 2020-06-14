@@ -24,7 +24,7 @@ dependencies:
   flutter:
     sdk: flutter
   stacked: ^1.6.0
-  stacked_services: ^0.4.0
+  stacked_services: ^0.4.1
   get_it: ^4.0.2
   injectable: ^0.4.0+1
   observable_ish: ^2.1.4
