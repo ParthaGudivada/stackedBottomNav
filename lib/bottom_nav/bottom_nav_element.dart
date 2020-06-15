@@ -83,4 +83,32 @@ extension NavChoicetExtension on NavChoice {
 
     return selectedText;
   }
+
+  static GlobalKey<NavigatorState> globalKey1(NavChoice choice) {
+    return _navigatorStateKeys[choice];
+  }
+
+  GlobalKey<NavigatorState> globalKey() {
+    return _navigatorStateKeys[this];
+  }
+
+  PageStorageKey pageStorageKey() {
+    return _pageStorageKeys[this];
+  }
+
+  static Map<NavChoice, GlobalKey<NavigatorState>> _navigatorStateKeys = {
+    NavChoice.red: GlobalKey<NavigatorState>(),
+    NavChoice.green: GlobalKey<NavigatorState>(),
+    NavChoice.blue: GlobalKey<NavigatorState>(),
+    NavChoice.yellow: GlobalKey<NavigatorState>(),
+    NavChoice.orange: GlobalKey<NavigatorState>(),
+  };
+
+  static Map<NavChoice, PageStorageKey> _pageStorageKeys = {
+    NavChoice.red: PageStorageKey(NavChoice.red.navTitle()),
+    NavChoice.green: PageStorageKey(NavChoice.green.navTitle()),
+    NavChoice.blue: PageStorageKey(NavChoice.blue.navTitle()),
+    NavChoice.yellow: PageStorageKey(NavChoice.yellow.navTitle()),
+    NavChoice.orange: PageStorageKey(NavChoice.orange.navTitle()),
+  };
 }

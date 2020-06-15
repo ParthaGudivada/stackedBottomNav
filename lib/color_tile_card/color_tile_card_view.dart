@@ -13,7 +13,8 @@ class ColorTileCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return ViewModelBuilder<ColorTileCardViewModel>.nonReactive(
       builder: (context, viewModel, child) => GestureDetector(
-        onTap: () => viewModel.selected(choice: choice, ofMaterialIndex: materialIndex),
+        onTap: () =>
+            viewModel.selected(choice: choice, ofMaterialIndex: materialIndex),
         child: Card(
           elevation: 20,
           color: choice.navColor()[materialIndex],
