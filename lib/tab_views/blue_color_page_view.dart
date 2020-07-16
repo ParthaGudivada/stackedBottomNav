@@ -8,6 +8,6 @@ class BlueColorPageView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // return Text('Blue');
-    return ColorTilePageView(choice: NavChoice.blue);
+    return ColorTilePageView(key: NavChoice.blue.pageStorageKey(), choice: NavChoice.blue);
   }
 }

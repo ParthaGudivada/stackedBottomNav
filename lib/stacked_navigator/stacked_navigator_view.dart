@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:stackedBottomNav/app/locator.dart';
-import 'package:stackedBottomNav/app/nested_router.gr.dart';
 import 'package:stackedBottomNav/bottom_nav/bottom_nav_element.dart';
 import 'package:stacked_services/stacked_services.dart';
 
@@ -18,7 +17,7 @@ class StackedNavigator extends StatelessWidget {
       key: _navigationService.nestedNavigationKey(choice.keyValue()),
       initialRoute: choice.initialPageRoute(),
       //onGenerateRoute: (settings) => StackedNavigatorRoute.generateRoute(settings, context, choice),
-      onGenerateRoute: NestedRouter().onGenerateRoute,
+      onGenerateRoute: choice.onGenerateRoute,
     );
   }
 }
