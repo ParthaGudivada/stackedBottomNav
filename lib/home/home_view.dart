@@ -6,7 +6,7 @@ import 'package:stackedBottomNav/bottom_nav/bottom_nav_element.dart';
 import 'package:stackedBottomNav/stacked_navigator/stacked_navigator_view.dart';
 
 class HomeView extends StatelessWidget {
-  const HomeView({Key key}) : super(key: key);
+  HomeView({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,8 +19,6 @@ class HomeView extends StatelessWidget {
         bottomNavigationBar: BottomNavBarView(),
         body: SafeArea(
           child: StackedNavigator(
-            navigatorKey:
-                viewModel.availableChoices[viewModel.selectedIndex].globalKey(),
             choice: viewModel.availableChoices[viewModel.selectedIndex],
           ),
         ),

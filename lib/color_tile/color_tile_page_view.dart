@@ -11,6 +11,7 @@ class ColorTilePageView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print('choice is ${choice.navTitle()}');
     return ViewModelBuilder<ColorTilePageViewModel>.nonReactive(
       builder: (context, viewModel, child) => ListView.builder(
         itemCount: viewModel.availableMaterialIndices.length,

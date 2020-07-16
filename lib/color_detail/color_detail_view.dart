@@ -12,6 +12,8 @@ class ColorDetailView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print('choice: ${choice.navTitle()}');
+
     return ViewModelBuilder<ColorDetailViewModel>.nonReactive(
       builder: (context, viewModel, child) => Center(
         child: Container(

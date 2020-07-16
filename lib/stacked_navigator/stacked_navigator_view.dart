@@ -1,20 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:stackedBottomNav/app/shared_constants.dart';
+import 'package:stackedBottomNav/app/locator.dart';
+import 'package:stackedBottomNav/app/nested_router.gr.dart';
 import 'package:stackedBottomNav/bottom_nav/bottom_nav_element.dart';
-import 'package:stackedBottomNav/stacked_navigator/stacked_navigator_route.dart';
+import 'package:stacked_services/stacked_services.dart';
 
 class StackedNavigator extends StatelessWidget {
-  final GlobalKey<NavigatorState> navigatorKey;
+  final NavigationService _navigationService = locator<NavigationService>();
+
   final NavChoice choice;
 
-  const StackedNavigator({this.navigatorKey, this.choice});
+  StackedNavigator({this.choice});
 
   @override
   Widget build(BuildContext context) {
+    print('key: ${choice.keyValue()} route: ${choice.initialPageRoute()}');
     return Navigator(
-      key: navigatorKey,
-      initialRoute: colorTilePageViewRoute,
-      onGenerateRoute: (settings) => StackedNavigatorRoute.generateRoute(settings, context, choice),
+      key: _navigationService.nestedNavigationKey(choice.keyValue()),
+      initialRoute: choice.initialPageRoute(),
+      //onGenerateRoute: (settings) => StackedNavigatorRoute.generateRoute(settings, context, choice),
+      onGenerateRoute: NestedRouter().onGenerateRoute,
     );
   }
 }

@@ -14,7 +14,7 @@ packages:
       name: analyzer
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.39.12"
+    version: "0.39.13"
   archive:
     dependency: transitive
     description:
@@ -42,14 +42,14 @@ packages:
       name: auto_route
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.6.1"
+    version: "0.5.0"
   auto_route_generator:
     dependency: "direct dev"
     description:
       name: auto_route_generator
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.6.0"
+    version: "0.5.0"
   boolean_selector:
     dependency: transitive
     description:
@@ -199,7 +199,7 @@ packages:
       name: get
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "3.2.2"
+    version: "3.3.0"
   get_it:
     dependency: "direct main"
     description:
@@ -449,7 +449,7 @@ packages:
       name: stacked
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.7.1+1"
+    version: "1.7.2"
   stacked_services:
     dependency: "direct main"
     description:

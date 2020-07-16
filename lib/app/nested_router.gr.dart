@@ -7,19 +7,24 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:auto_route/auto_route.dart';
-import 'package:stackedBottomNav/color_tile/color_tile_page_view.dart';
-import 'package:stackedBottomNav/bottom_nav/bottom_nav_element.dart';
-import 'package:stackedBottomNav/color_detail/color_detail_view.dart';
-import 'package:stackedBottomNav/home/home_view.dart';
+import 'package:stackedBottomNav/tab_views/red_color_page_view.dart';
+import 'package:stackedBottomNav/tab_views/green_color_page_view.dart';
+import 'package:stackedBottomNav/tab_views/blue_color_page_view.dart';
+import 'package:stackedBottomNav/tab_views/yellow_color_page_view.dart';
+import 'package:stackedBottomNav/tab_views/orange_color_page_view.dart';
 
 abstract class Routes {
-  static const colorTilePageViewRoute = '/';
-  static const colorDetailViewRoute = '/color-detail-view-route';
-  static const homeViewRoute = '/home-view-route';
+  static const redColorPageViewRoute = '/';
+  static const greenColorPageViewRoute = '/green-color-page-view-route';
+  static const blueColorPageViewRoute = '/blue-color-page-view-route';
+  static const yellowColorPageViewRoute = '/yellow-color-page-view-route';
+  static const orangeColorPageViewRoute = '/orange-color-page-view-route';
   static const all = {
-    colorTilePageViewRoute,
-    colorDetailViewRoute,
-    homeViewRoute,
+    redColorPageViewRoute,
+    greenColorPageViewRoute,
+    blueColorPageViewRoute,
+    yellowColorPageViewRoute,
+    orangeColorPageViewRoute,
   };
 }
 
@@ -35,37 +40,54 @@ class NestedRouter extends RouterBase {
   Route<dynamic> onGenerateRoute(RouteSettings settings) {
     final args = settings.arguments;
     switch (settings.name) {
-      case Routes.colorTilePageViewRoute:
-        if (hasInvalidArgs<ColorTilePageViewArguments>(args)) {
-          return misTypedArgsRoute<ColorTilePageViewArguments>(args);
+      case Routes.redColorPageViewRoute:
+        if (hasInvalidArgs<RedColorPageViewArguments>(args)) {
+          return misTypedArgsRoute<RedColorPageViewArguments>(args);
         }
         final typedArgs =
-            args as ColorTilePageViewArguments ?? ColorTilePageViewArguments();
+            args as RedColorPageViewArguments ?? RedColorPageViewArguments();
         return MaterialPageRoute<dynamic>(
-          builder: (context) =>
-              ColorTilePageView(key: typedArgs.key, choice: typedArgs.choice),
+          builder: (context) => RedColorPageView(key: typedArgs.key),
           settings: settings,
         );
-      case Routes.colorDetailViewRoute:
-        if (hasInvalidArgs<ColorDetailViewArguments>(args)) {
-          return misTypedArgsRoute<ColorDetailViewArguments>(args);
+      case Routes.greenColorPageViewRoute:
+        if (hasInvalidArgs<GreenColorPageViewArguments>(args)) {
+          return misTypedArgsRoute<GreenColorPageViewArguments>(args);
+        }
+        final typedArgs = args as GreenColorPageViewArguments ??
+            GreenColorPageViewArguments();
+        return MaterialPageRoute<dynamic>(
+          builder: (context) => GreenColorPageView(key: typedArgs.key),
+          settings: settings,
+        );
+      case Routes.blueColorPageViewRoute:
+        if (hasInvalidArgs<BlueColorPageViewArguments>(args)) {
+          return misTypedArgsRoute<BlueColorPageViewArguments>(args);
         }
         final typedArgs =
-            args as ColorDetailViewArguments ?? ColorDetailViewArguments();
+            args as BlueColorPageViewArguments ?? BlueColorPageViewArguments();
         return MaterialPageRoute<dynamic>(
-          builder: (context) => ColorDetailView(
-              key: typedArgs.key,
-              choice: typedArgs.choice,
-              materialIndex: typedArgs.materialIndex),
+          builder: (context) => BlueColorPageView(key: typedArgs.key),
           settings: settings,
         );
-      case Routes.homeViewRoute:
-        if (hasInvalidArgs<HomeViewArguments>(args)) {
-          return misTypedArgsRoute<HomeViewArguments>(args);
+      case Routes.yellowColorPageViewRoute:
+        if (hasInvalidArgs<YellowColorPageViewArguments>(args)) {
+          return misTypedArgsRoute<YellowColorPageViewArguments>(args);
         }
-        final typedArgs = args as HomeViewArguments ?? HomeViewArguments();
+        final typedArgs = args as YellowColorPageViewArguments ??
+            YellowColorPageViewArguments();
         return MaterialPageRoute<dynamic>(
-          builder: (context) => HomeView(key: typedArgs.key),
+          builder: (context) => YellowColorPageView(key: typedArgs.key),
+          settings: settings,
+        );
+      case Routes.orangeColorPageViewRoute:
+        if (hasInvalidArgs<OrangeColorPageViewArguments>(args)) {
+          return misTypedArgsRoute<OrangeColorPageViewArguments>(args);
+        }
+        final typedArgs = args as OrangeColorPageViewArguments ??
+            OrangeColorPageViewArguments();
+        return MaterialPageRoute<dynamic>(
+          builder: (context) => OrangeColorPageView(key: typedArgs.key),
           settings: settings,
         );
       default:
@@ -78,23 +100,32 @@ class NestedRouter extends RouterBase {
 // Arguments holder classes
 // **************************************************************************
 
-//ColorTilePageView arguments holder class
-class ColorTilePageViewArguments {
+//RedColorPageView arguments holder class
+class RedColorPageViewArguments {
   final Key key;
-  final NavChoice choice;
-  ColorTilePageViewArguments({this.key, this.choice});
+  RedColorPageViewArguments({this.key});
 }
 
-//ColorDetailView arguments holder class
-class ColorDetailViewArguments {
+//GreenColorPageView arguments holder class
+class GreenColorPageViewArguments {
   final Key key;
-  final NavChoice choice;
-  final int materialIndex;
-  ColorDetailViewArguments({this.key, this.choice, this.materialIndex});
+  GreenColorPageViewArguments({this.key});
 }
 
-//HomeView arguments holder class
-class HomeViewArguments {
+//BlueColorPageView arguments holder class
+class BlueColorPageViewArguments {
   final Key key;
-  HomeViewArguments({this.key});
+  BlueColorPageViewArguments({this.key});
+}
+
+//YellowColorPageView arguments holder class
+class YellowColorPageViewArguments {
+  final Key key;
+  YellowColorPageViewArguments({this.key});
+}
+
+//OrangeColorPageView arguments holder class
+class OrangeColorPageViewArguments {
+  final Key key;
+  OrangeColorPageViewArguments({this.key});
 }
