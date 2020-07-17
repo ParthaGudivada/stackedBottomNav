@@ -4,7 +4,6 @@ import 'package:stackedBottomNav/color_tile/color_tile_page_view_model.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stackedBottomNav/color_tile_card/color_tile_card_view.dart';
 
-
 class ColorTilePageView extends StatelessWidget {
   final NavChoice choice;
 

@@ -15,15 +15,30 @@ class ColorDetailView extends StatelessWidget {
     print('choice: ${choice.navTitle()}');
 
     return ViewModelBuilder<ColorDetailViewModel>.nonReactive(
-      builder: (context, viewModel, child) => Center(
-        child: Container(
-          color: choice.navColor()[materialIndex],
-          child: Center(
-            child: Text('Color Detail'),
+      builder: (context, viewModel, child) => Column(
+        children: <Widget>[
+          AppBar(
+            title: Text('Color Detail'),
           ),
-        ),
+          Expanded(
+            child: Container(
+              color: choice.navColor()[materialIndex],
+              child: Center(
+                child: Text('Color Detail'),
+              ),
+            ),
+          ),
+        ],
       ),
       viewModelBuilder: () => ColorDetailViewModel(),
     );
   }
+}
+
+//ColorDetailView arguments holder class
+class ColorDetailViewArguments {
+  final Key key;
+  final NavChoice choice;
+  final int materialIndex;
+  ColorDetailViewArguments({this.key, this.choice, this.materialIndex});
 }

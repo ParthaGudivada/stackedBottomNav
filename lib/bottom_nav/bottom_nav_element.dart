@@ -1,11 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:stackedBottomNav/app/blue_router.gr.dart';
-import 'package:stackedBottomNav/app/green_router.gr.dart';
-import 'package:stackedBottomNav/app/orange_router.gr.dart';
-import 'package:stackedBottomNav/app/red_router.gr.dart';
 import 'package:stackedBottomNav/app/shared_constants.dart';
-import 'package:stackedBottomNav/app/yellow_router.gr.dart';
-import 'package:stackedBottomNav/color_tile/color_tile_page_view.dart';
 
 enum NavChoice { red, green, blue, yellow, orange }
 
@@ -115,9 +109,24 @@ extension NavChoicetExtension on NavChoice {
     return selectedText;
   }
 
-  Widget view() {
-    return ColorTilePageView(key: this.pageStorageKey(), choice: this);
-  }
+  // Widget view() {
+  //   switch (this) {
+  //     case NavChoice.red:
+  //       return RedColorPageView();
+
+  //     case NavChoice.green:
+  //       return GreenColorPageView();
+
+  //     case NavChoice.blue:
+  //       return BlueColorPageView();
+
+  //     case NavChoice.yellow:
+  //       return YellowColorPageView();
+
+  //     case NavChoice.orange:
+  //       return OrangeColorPageView();
+  //   }
+  // }
 
   int nestedKeyValue() {
     int value;
@@ -143,26 +152,26 @@ extension NavChoicetExtension on NavChoice {
     return value;
   }
 
-  Route<dynamic> onGenerateRoute(RouteSettings settings) {
-    switch (this) {
-      case NavChoice.red:
-        return RedRouter().onGenerateRoute(settings);
+  // Route<dynamic> onGenerateRoute(RouteSettings settings) {
+  //   switch (this) {
+  //     case NavChoice.red:
+  //       return RedRouter().onGenerateRoute(settings);
 
-      case NavChoice.green:
-        return GreenRouter().onGenerateRoute(settings);
+  //     case NavChoice.green:
+  //       return GreenRouter().onGenerateRoute(settings);
 
-      case NavChoice.blue:
-        return BlueRouter().onGenerateRoute(settings);
+  //     case NavChoice.blue:
+  //       return BlueRouter().onGenerateRoute(settings);
 
-      case NavChoice.yellow:
-        return YellowRouter().onGenerateRoute(settings);
+  //     case NavChoice.yellow:
+  //       return YellowRouter().onGenerateRoute(settings);
 
-      case NavChoice.orange:
-        return OrangeRouter().onGenerateRoute(settings);
-    }
+  //     case NavChoice.orange:
+  //       return OrangeRouter().onGenerateRoute(settings);
+  //   }
 
-    return RedRouter().onGenerateRoute(settings);
-  }
+  //   return RedRouter().onGenerateRoute(settings);
+  // }
 
   // static GlobalKey<NavigatorState> globalKey1(NavChoice choice) {
   //   return _navigatorStateKeys[choice];
