@@ -16,7 +16,7 @@ class RedColorPageView extends StatelessWidget {
       builder: (context, viewModel, child) => Column(
         children: [
           AppBar(
-            title: Text('Red Color'),
+            title: Text(viewModel.choice.navTitle()),
           ),
           Expanded(
             child: ColorTilePageView(

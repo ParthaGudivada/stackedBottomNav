@@ -20,7 +20,7 @@ class _YellowNavigatorState extends State<YellowNavigator> {
   Widget build(BuildContext context) {
     return Navigator(
       key: _navigatorService
-          .nestedNavigationKey(NavChoice.blue.nestedKeyValue()),
+          .nestedNavigationKey(NavChoice.yellow.nestedKeyValue()),
       onGenerateRoute: (RouteSettings settings) {
         return MaterialPageRoute(
           settings: settings,

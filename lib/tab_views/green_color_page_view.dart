@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stackedBottomNav/bottom_nav/bottom_nav_element.dart';
 import 'package:stackedBottomNav/color_tile/color_tile_page_view.dart';
-import 'package:stackedBottomNav/tab_views/greeen_color_page_view_model.dart';
+import 'package:stackedBottomNav/tab_views/green_color_page_view_model.dart';
 
 class GreenColorPageView extends StatelessWidget {
   const GreenColorPageView({Key key}) : super(key: key);
@@ -16,7 +16,7 @@ class GreenColorPageView extends StatelessWidget {
       builder: (context, viewModel, child) => Column(
         children: [
           AppBar(
-            title: Text('Green Color'),
+            title: Text(viewModel.choice.navTitle()),
           ),
           Expanded(
             child: ColorTilePageView(
