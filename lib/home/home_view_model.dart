@@ -1,17 +1,30 @@
+import 'package:flutter/material.dart';
 import 'package:injectable/injectable.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stackedBottomNav/app/locator.dart';
-import 'package:stackedBottomNav/services/bottom_nav_service.dart';
 import 'package:stackedBottomNav/bottom_nav/bottom_nav_element.dart';
+import 'package:stacked_services/stacked_services.dart';
 
 @injectable
-class HomeViewModel extends ReactiveViewModel {
-  final _bottomNavService = locator<BottomNavService>();
+class HomeViewModel extends IndexTrackingViewModel {
+  final NavigationService _navigationService = locator<NavigationService>();
 
-  int get selectedIndex => _bottomNavService.index;
+  List<BottomNavigationBarItem> get availableItems =>
+      availableChoices.map((elem) => elem.navChoiceItem()).toList();
 
-  @override
-  List<ReactiveServiceMixin> get reactiveServices => [_bottomNavService];
+  List<NavChoice> get availableChoices => [
+        NavChoice.red,
+        NavChoice.green,
+        NavChoice.blue,
+        NavChoice.yellow,
+        NavChoice.orange
+      ];
 
-  List<NavChoice> get availableChoices => _bottomNavService.availableChoices;
+  GlobalKey<NavigatorState> get currentNestedKey =>
+    _navigationService
+        .nestedNavigationKey(availableChoices[currentIndex].nestedKeyValue());
+
+  NavChoice get currentChoice => 
+    availableChoices[currentIndex];
+  
 }

@@ -14,8 +14,9 @@ class ColorTileCardViewModel extends BaseViewModel {
     // return _navigationService.navigateTo(colorDetailViewRoute,
     //     arguments: [choice, ofMaterialIndex], id: choice.keyValue());
 
-    return _navigationService.navigateToView(ColorDetailView(choice: choice, materialIndex: ofMaterialIndex),
-         id: choice.keyValue());
+    return _navigationService.navigateToView(
+        ColorDetailView(choice: choice, materialIndex: ofMaterialIndex),
+        id: choice.nestedKeyValue());
 
     //  .navigateTo(colorDetailViewRoute, arguments: [choice, ofMaterialIndex]);
   }

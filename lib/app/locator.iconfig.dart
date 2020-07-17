@@ -8,6 +8,8 @@ import 'package:stackedBottomNav/services/bottom_nav_service.dart';
 import 'package:stackedBottomNav/home/home_view_model.dart';
 import 'package:stackedBottomNav/services/third_party_service.dart';
 import 'package:stacked_services/stacked_services.dart';
+import 'package:stackedBottomNav/stacked_navigator/stacked_navigator_view.dart';
+import 'package:stackedBottomNav/bottom_nav/bottom_nav_element.dart';
 import 'package:get_it/get_it.dart';
 
 void $initGetIt(GetIt g, {String environment}) {
@@ -16,6 +18,8 @@ void $initGetIt(GetIt g, {String environment}) {
   g.registerFactory<HomeViewModel>(() => HomeViewModel());
   g.registerLazySingleton<NavigationService>(
       () => thirdPartyService.navigationService);
+  g.registerFactory<StackedNavigator>(
+      () => StackedNavigator(choice: g<NavChoice>()));
 }
 
 class _$ThirdPartyService extends ThirdPartyService {

@@ -12,9 +12,9 @@ class StackedNavigator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print('key: ${choice.keyValue()} route: ${choice.initialPageRoute()}');
+    print('key: ${choice.nestedKeyValue()} route: ${choice.initialPageRoute()}');
     return Navigator(
-      key: _navigationService.nestedNavigationKey(choice.keyValue()),
+      key: _navigationService.nestedNavigationKey(choice.nestedKeyValue()),
       initialRoute: choice.initialPageRoute(),
       //onGenerateRoute: (settings) => StackedNavigatorRoute.generateRoute(settings, context, choice),
       onGenerateRoute: choice.onGenerateRoute,

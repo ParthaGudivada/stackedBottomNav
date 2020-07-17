@@ -5,6 +5,7 @@ import 'package:stackedBottomNav/app/orange_router.gr.dart';
 import 'package:stackedBottomNav/app/red_router.gr.dart';
 import 'package:stackedBottomNav/app/shared_constants.dart';
 import 'package:stackedBottomNav/app/yellow_router.gr.dart';
+import 'package:stackedBottomNav/color_tile/color_tile_page_view.dart';
 
 enum NavChoice { red, green, blue, yellow, orange }
 
@@ -114,7 +115,11 @@ extension NavChoicetExtension on NavChoice {
     return selectedText;
   }
 
-  int keyValue() {
+  Widget view() {
+    return ColorTilePageView(key: this.pageStorageKey(), choice: this);
+  }
+
+  int nestedKeyValue() {
     int value;
 
     switch (this) {
