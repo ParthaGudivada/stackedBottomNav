@@ -8,7 +8,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ViewModelBuilder.nonReactive(
+    return ViewModelBuilder<MyAppViewModel>.nonReactive(
       builder: (context, viewModel, child) => MaterialApp(
         title: 'Stacked Bottom Navigator',
         theme: ThemeData(
